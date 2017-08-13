@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = current_course
-    # @new_student = Student.new
+    @student = Student.new
   end
 
   def edit
@@ -49,20 +49,5 @@ class CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(:name, :standard1, :standard2, :standard3, :standard4, :standard5, :standard6, :standard7, :standard8, :standard9, :standard10, :standard11, :standard12)
   end
-
-  def require_authorized_for_current_course
-    if current_course.user != current_user
-      render text: 'Unauthorized', status: :unauthorized
-    end
-  end
-
-  helper_method :current_course
-  def current_course
-    if params[:id].nil?
-      @current_course ||= Course.find(params[:course_id])
-    else
-      @current_course ||= Course.find(params[:id])
-    end
-end
 
 end

@@ -2,6 +2,26 @@
 
 <h2>Students</h2>
 
+<% if @course.students.empty? %>
+  <p>No students to display.</p>
+<% else %>
+  <ul>
+    <% @course.students.order("last_name").each do |student| %>
+      <li>
+        <%= link_to student_path(student) do %>
+          <%= student.last_name %>, <%= student.first_name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for @student, url: course_students_path(@course) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.submit "Add Student", class: 'btn btn-primary' %>
+<% end %>
+
 <h2>Assignments</h2>
 
 <h2>Standards</h2>

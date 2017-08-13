@@ -1,0 +1,31 @@
+<h1>Create a New Assignment</h1>
+
+<%= simple_form_for @assignment, url: course_assignments_path(course_id: @course.id) do |f| %>
+  <%= f.input :name %>
+  <p>Standard 1. <%= @course.standard1 %></p>
+  <%= f.input :has_standard1 %>
+  <p>Standard 2. <%= @course.standard2 %></p>
+  <%= f.input :has_standard2 %>
+  <p>Standard 3. <%= @course.standard3 %></p>
+  <%= f.input :has_standard3 %>
+  <p>Standard 4. <%= @course.standard4 %></p>
+  <%= f.input :has_standard4 %>
+  <p>Standard 5. <%= @course.standard5 %></p>
+  <%= f.input :has_standard5 %>
+  <p>Standard 6. <%= @course.standard6 %></p>
+  <%= f.input :has_standard6 %>
+  <p>Standard 7. <%= @course.standard7 %></p>
+  <%= f.input :has_standard7 %>
+  <p>Standard 8. <%= @course.standard8 %></p>
+  <%= f.input :has_standard8 %>
+  <p>Standard 9. <%= @course.standard9 %></p>
+  <%= f.input :has_standard9 %>
+  <p>Standard 10. <%= @course.standard10 %></p>
+  <%= f.input :has_standard10 %>
+  <p>Standard 11. <%= @course.standard11 %></p>
+  <%= f.input :has_standard11 %>
+  <p>Standard 12. <%= @course.standard12 %></p>
+  <%= f.input :has_standard12 %>
+  <br/>
+  <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>

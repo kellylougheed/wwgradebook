@@ -1,0 +1,19 @@
+<h1>Edit Assignment</h1>
+
+<%= simple_form_for @assignment, url: assignment_path(@assignment) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :has_standard1 %>
+  <%= f.input :has_standard2 %>
+  <%= f.input :has_standard3 %>
+  <%= f.input :has_standard4 %>
+  <%= f.input :has_standard5 %>
+  <%= f.input :has_standard6 %>
+  <%= f.input :has_standard7 %>
+  <%= f.input :has_standard8 %>
+  <%= f.input :has_standard9 %>
+  <%= f.input :has_standard10 %>
+  <%= f.input :has_standard11 %>
+  <%= f.input :has_standard12 %>
+  <br/>
+  <%= f.submit "Update Assignment", class: 'btn btn-primary' %>
+<% end %>

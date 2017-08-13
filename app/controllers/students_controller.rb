@@ -6,13 +6,43 @@ class StudentsController < ApplicationController
 
   def create
     @course = current_course
-    @course.students.create(student_params.merge(course_id: @course.id))
-    redirect_to course_path(@course)
+    @student = Student.new(student_params)
+    @student.course_id = @course.id
+    if @student.valid?
+      @student.save
+      redirect_to course_path(@course)
+    else
+      redirect_to course_path(@course)
+      flash[:alert] = 'Please enter a valid student name.'
+    end
   end
 
   def show
     @student = current_student
     @course = @student.course
+  end
+
+  def edit
+    @course = current_course
+    @student = current_student
+  end
+
+  def update
+    @course = current_student.course
+    if current_student.update_attributes(student_params)
+      redirect_to course_path(@course)
+      flash[:notice] = 'The student was successfully updated.'
+    else
+      redirect_to course_path(@course)
+      flash[:alert] = 'The student could not be updated because of an invalid name. Please try again.'
+    end
+  end
+
+  def destroy
+    @student = current_student
+    @course = @student.course
+    @student.destroy
+    redirect_to class_path(@course)
   end
 
   private

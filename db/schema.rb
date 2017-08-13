@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813043319) do
+ActiveRecord::Schema.define(version: 20170813153737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "has_standard1"
+    t.boolean  "has_standard2"
+    t.boolean  "has_standard3"
+    t.boolean  "has_standard4"
+    t.boolean  "has_standard5"
+    t.boolean  "has_standard6"
+    t.boolean  "has_standard7"
+    t.boolean  "has_standard8"
+    t.boolean  "has_standard9"
+    t.boolean  "has_standard10"
+    t.boolean  "has_standard11"
+    t.boolean  "has_standard12"
+    t.integer  "course_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["course_id"], name: "index_assignments_on_course_id", using: :btree
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"

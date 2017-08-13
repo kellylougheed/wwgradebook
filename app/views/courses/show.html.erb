@@ -5,15 +5,19 @@
 <% if @course.students.empty? %>
   <p>No students to display.</p>
 <% else %>
-  <ul>
-    <% @course.students.order("last_name").each do |student| %>
-      <li>
-        <%= link_to student_path(student) do %>
-          <%= student.last_name %>, <%= student.first_name %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <% @course.students.order("last_name").each do |student| %>
+    <p>
+      <%= link_to student_path(student), method: :delete, data: {confirm: 'Are you sure you want to delete this student?'} do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to edit_student_path(student) do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to student_path(student) do %>
+        <%= student.last_name %>, <%= student.first_name %>
+      <% end %>
+    </p>
+  <% end %>
 <% end %>
 
 <%= simple_form_for @student, url: course_students_path(@course) do |f| %>
@@ -23,6 +27,26 @@
 <% end %>
 
 <h2>Assignments</h2>
+
+<% if @course.assignments.empty? %>
+  <p>No assignments to display.</p>
+<% else %>
+  <% @course.assignments.each do |assignment| %>
+    <p>
+      <%= link_to assignment_path(assignment), method: :delete, data: {confirm: 'Are you sure you want to delete this assignment?'} do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to edit_assignment_path(assignment) do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to assignment_path(assignment) do %>
+        <%= assignment.name %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'New Assignment', new_course_assignment_path(@course), class: 'btn btn-primary' %>
 
 <h2>Standards</h2>
 

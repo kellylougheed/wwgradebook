@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :students, only: [:create]
     resources :assignments, only: [:create, :new]
   end
-  resources :students, only: [:show, :edit, :update, :destroy]
+  resources :students, only: [:show, :edit, :update, :destroy] # do
+    # resources :comments, only: [:create, :edit, :update, :destroy]
+    # resources :entries, only: [:create, :edit, :update, :destroy]
+  # end
   resources :assignments, only: [:show, :edit, :update, :destroy]
 end

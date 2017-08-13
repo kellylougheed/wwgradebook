@@ -1,0 +1,19 @@
+<h1>Create a New Course</h1>
+
+<%= simple_form_for @course do |f| %>
+  <%= f.input :name %>
+  <%= f.input :standard1 %>
+  <%= f.input :standard2 %>
+  <%= f.input :standard3 %>
+  <%= f.input :standard4 %>
+  <%= f.input :standard5 %>
+  <%= f.input :standard6 %>
+  <%= f.input :standard7 %>
+  <%= f.input :standard8 %>
+  <%= f.input :standard9 %>
+  <%= f.input :standard10 %>
+  <%= f.input :standard11 %>
+  <%= f.input :standard12 %>
+  <br/>
+  <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>

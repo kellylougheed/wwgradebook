@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  # root 'static_pages#index'
-  root 'courses#index'
+  devise_for :users
+  root 'static_pages#index'
+  resources :courses
 end

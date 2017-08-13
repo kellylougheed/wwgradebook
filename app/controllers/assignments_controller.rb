@@ -28,8 +28,8 @@ class AssignmentsController < ApplicationController
   end
 
   def edit
-    @course = current_course
     @assignment = current_assignment
+    @course = @assignment.course
   end
 
   def update

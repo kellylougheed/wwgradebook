@@ -1,0 +1,6 @@
+<h1>Edit Comment</h1>
+
+<%= simple_form_for @comment, url: student_comment_path(@student, @comment) do |f| %>
+  <%= f.input :message %>
+  <%= f.submit 'Update Comment', class: 'btn btn-primary' %>
+<% end %>

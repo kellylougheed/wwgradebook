@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
     @course = @student.course
     @comment = Comment.new
     @comments = @student.comments
+    @entries = @student.entries
   end
 
   def edit

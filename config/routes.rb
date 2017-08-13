@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :students, only: [:show, :edit, :update, :destroy] do
     resources :comments, only: [:create, :edit, :update, :destroy]
-    # resources :entries, only: [:create, :edit, :update, :destroy]
+    resources :entries, only: [:show, :new, :create, :edit, :update, :destroy]
   end
   resources :assignments, only: [:show, :edit, :update, :destroy]
 end

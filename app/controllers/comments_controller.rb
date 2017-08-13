@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_student.comments.create(comment_params)
+    @comment.student_id = current_student.id
     redirect_to student_path(current_student)
   end
 
@@ -16,12 +17,14 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = current_comment
+    @student = current_student
   end
 
   def update
     @comment = current_comment
     if @comment.update_attributes(comment_params)
       redirect_to student_path(current_student)
+      flash[:notice] = 'The comment was successfully updated.'
     else
       redirect_to student_path(current_student)
       flash[:alert] = 'The comment could not be updated because of invalid text. Please try again.'
@@ -51,7 +54,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:message, :friendly_date, :auto_send)
+    params.require(:comment).permit(:message)
   end
 
 end

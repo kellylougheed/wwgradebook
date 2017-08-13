@@ -113,7 +113,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -138,7 +138,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -163,7 +163,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -188,7 +188,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -213,7 +213,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -238,7 +238,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -263,7 +263,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -288,7 +288,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -313,7 +313,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -338,7 +338,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -363,7 +363,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end
@@ -388,7 +388,7 @@ class Student < ApplicationRecord
     average = total_points.to_f/total_occurrences.to_f
     average = average.round(2)
     if total_occurrences == 0
-      "No data"
+      "N/A"
     else
       convert_to_grade(average)
     end

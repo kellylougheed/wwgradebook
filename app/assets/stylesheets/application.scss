@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import url(//fonts.googleapis.com/css?family=Oswald:300);
+
 h1 {
   margin-top: 20px;
   text-align: center;
@@ -25,4 +27,29 @@ div.main {
 
 .navbar-inverse {
   background: #333333;
+}
+
+a.navbar-brand {
+  padding: 0;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  font-family: 'Oswald';
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+
+button.navbar-toggler {
+  background: repeating-linear-gradient(
+    0deg,
+    #333333,
+    #333333 10px,
+    #007bff 0px,
+    #007bff 15px
+  );
+}
+
+@media (max-width: 767px) {
+  a.navbar-brand {
+    font-size: 2em;
+  }
 }

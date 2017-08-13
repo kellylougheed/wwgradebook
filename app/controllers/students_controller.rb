@@ -20,6 +20,8 @@ class StudentsController < ApplicationController
   def show
     @student = current_student
     @course = @student.course
+    @comment = Comment.new
+    @comments = @student.comments
   end
 
   def edit

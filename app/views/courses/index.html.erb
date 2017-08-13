@@ -6,7 +6,7 @@
 
 <% else %>
 
-<%= @courses.each do |course| %>
+<% @courses.each do |course| %>
 
   <h2><%= link_to course_path(course) do %><%= course.name %><% end %></h2>
 

@@ -1,7 +1,10 @@
 class CoursesController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :require_authorized_for_current_course, only: [:show]
+
   def index
-    @courses = Course.all
+    @courses = current_user.courses.all
   end
 
   def new
@@ -9,7 +12,18 @@ class CoursesController < ApplicationController
   end
 
   def create
-    Course.create(course_params)
+    current_user.courses.create(course_params)
+    redirect_to courses_path
+  end
+
+  def show
+    @course = current_course
+    # @new_student = Student.new
+  end
+
+  def destroy
+    @course = current_course
+    @course.destroy
     redirect_to courses_path
   end
 
@@ -18,5 +32,20 @@ class CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(:name, :standard1, :standard2, :standard3, :standard4, :standard5, :standard6, :standard7, :standard8, :standard9, :standard10, :standard11, :standard12)
   end
+
+  def require_authorized_for_current_course
+    if current_course.user != current_user
+      render text: 'Unauthorized', status: :unauthorized
+    end
+  end
+
+  helper_method :current_course
+  def current_course
+    if params[:id].nil?
+      @current_course ||= Course.find(params[:course_id])
+    else
+      @current_course ||= Course.find(params[:id])
+    end
+end
 
 end

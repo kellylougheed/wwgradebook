@@ -1,29 +1,16 @@
 <h1>My Courses</h1>
 
+<% if !@courses %>
+
+<p>No courses to display.</p>
+
+<% else %>
+
 <%= @courses.each do |course| %>
 
-  <h2><%= course.name %></h2>
+  <h2><%= link_to course.name, course_path(course) %></h2>
 
-  <h3>Students</h3>
-
-  <h3>Assignments</h3>
-
-  <h3>Standards</h3>
-
-  <ol>
-    <li> <%= course.standard1 %> </li>
-    <li> <%= course.standard2 %> </li>
-    <li> <%= course.standard3 %> </li>
-    <li> <%= course.standard4 %> </li>
-    <li> <%= course.standard5 %> </li>
-    <li> <%= course.standard6 %> </li>
-    <li> <%= course.standard7 %> </li>
-    <li> <%= course.standard8 %> </li>
-    <li> <%= course.standard9 %> </li>
-    <li> <%= course.standard10 %> </li>
-    <li> <%= course.standard11 %> </li>
-    <li> <%= course.standard12 %> </li>
-  </ol>
+<% end %>
 
 <% end %>
 

@@ -12,8 +12,15 @@ class CoursesController < ApplicationController
   end
 
   def create
-    current_user.courses.create(course_params)
-    redirect_to courses_path
+    @course = Course.new(course_params)
+    @course.user = current_user
+    if @course.valid?
+      @course.save
+      redirect_to courses_path
+    else
+      redirect_to courses_path
+      flash[:alert] = 'Please enter a course name.'
+    end
   end
 
   def show

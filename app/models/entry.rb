@@ -1,5 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :student
+  validates :assignment, presence: true, length: { minimum: 1 }
 
   GRADES = {
     'Mastery': 'M',

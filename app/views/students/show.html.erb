@@ -1,12 +1,29 @@
 <h1><%= @student.first_name %> <%= @student.last_name %></h1>
 
-<h2>Overview</h2>
+<h5>Grades by Frequency</h5>
 
-<p>Overall Average</p>
+<p>
+  <b>Mastery</b>: <%= @student.m_percentage %>%<br/>
+  <b>Approaching Mastery</b>: <%= @student.am_percentage %>%<br/>
+  <b>Developing Competence</b>: <%= @student.dc_percentage %>%<br/>
+  <b>Not Demonstrating Competence</b>: <%= @student.ndc_percentage %>%
+</p>
 
-<h4>Frequency</h4>
+<h5>Grades by Standards</h5>
 
-<h4>Standards</h4>
+<p>1. <%= @course.standard1 %>: <b><%= @student.standard1_avg %></b><br/>
+2. <%= @course.standard2 %>: <b><%= @student.standard2_avg %></b><br/>
+3. <%= @course.standard3 %>: <b><%= @student.standard3_avg %></b><br/>
+4. <%= @course.standard4 %>: <b><%= @student.standard4_avg %></b><br/>
+5. <%= @course.standard5 %>: <b><%= @student.standard5_avg %></b><br/>
+6. <%= @course.standard6 %>: <b><%= @student.standard6_avg %></b><br/>
+7. <%= @course.standard7 %>: <b><%= @student.standard7_avg %></b><br/>
+8. <%= @course.standard8 %>: <b><%= @student.standard8_avg %></b><br/>
+9. <%= @course.standard9 %>: <b><%= @student.standard9_avg %></b><br/>
+10. <%= @course.standard10 %>: <b><%= @student.standard10_avg %></b><br/>
+11. <%= @course.standard11 %>: <b><%= @student.standard11_avg %></b><br/>
+12. <%= @course.standard12 %>: <b><%= @student.standard12_avg %></b><br/>
+</p>
 
 <h2>Grades</h2>
 

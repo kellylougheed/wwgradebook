@@ -1,4 +1,9 @@
-<p>Back to student</p>
+<br/>
+<p>
+  <%= link_to student_path(@student) do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to <%= @student.first_name %> <%= @student.last_name %>
+  <% end %>
+</p>
 
 <h1><%= @entry.assignment_name %></h1>
 
@@ -54,7 +59,11 @@
 
 <h2>Comments</h2>
 
-<p><%= @entry.comment %></p>
+<% if @entry.comment? %>
+  <p><%= @entry.comment %></p>
+<% else %>
+  <p>Click "Edit Grade Entry" to add a comment.</p>
+<% end %>
 
 <%= link_to edit_student_entry_path(@student, @entry) do %>
   <button class="btn btn-primary">Edit Grade Entry</button>

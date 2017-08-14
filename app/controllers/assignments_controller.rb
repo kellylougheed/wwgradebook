@@ -33,12 +33,12 @@ class AssignmentsController < ApplicationController
   end
 
   def update
-    @course = current_assignment.course
+    @assignment = current_assignment
     if current_assignment.update_attributes(assignment_params)
-      redirect_to course_path(@course)
+      redirect_to assignment_path(@assignment)
       flash[:notice] = 'The assignment was successfully updated.'
     else
-      redirect_to course_path(@course)
+      redirect_to assignment_path(@assignment)
       flash[:alert] = 'The assignment could not be updated because of an invalid name. Please try again.'
     end
   end

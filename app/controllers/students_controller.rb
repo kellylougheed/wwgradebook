@@ -26,8 +26,8 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @course = current_course
     @student = current_student
+    @course = @student.course
   end
 
   def update

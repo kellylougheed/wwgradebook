@@ -1,19 +1,26 @@
+<br/>
+<p>
+  <%= link_to courses_path do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to my courses
+  <% end %>
+</p>
+
 <h1>Create a New Course</h1>
 
 <%= simple_form_for @course do |f| %>
-  <%= f.input :name %>
-  <%= f.input :standard1 %>
-  <%= f.input :standard2 %>
-  <%= f.input :standard3 %>
-  <%= f.input :standard4 %>
-  <%= f.input :standard5 %>
-  <%= f.input :standard6 %>
-  <%= f.input :standard7 %>
-  <%= f.input :standard8 %>
-  <%= f.input :standard9 %>
-  <%= f.input :standard10 %>
-  <%= f.input :standard11 %>
-  <%= f.input :standard12 %>
+  <%= f.input :name, label: 'Course Name'  %>
+  <%= f.input :standard1, label: 'Standard 1' %>
+  <%= f.input :standard2, label: 'Standard 2' %>
+  <%= f.input :standard3, label: 'Standard 3' %>
+  <%= f.input :standard4, label: 'Standard 4' %>
+  <%= f.input :standard5, label: 'Standard 5' %>
+  <%= f.input :standard6, label: 'Standard 6' %>
+  <%= f.input :standard7, label: 'Standard 7' %>
+  <%= f.input :standard8, label: 'Standard 8' %>
+  <%= f.input :standard9, label: 'Standard 9' %>
+  <%= f.input :standard10, label: 'Standard 10' %>
+  <%= f.input :standard11, label: 'Standard 11' %>
+  <%= f.input :standard12, label: 'Standard 12' %>
   <br/>
   <%= f.submit 'Create', class: 'btn btn-primary' %>
 <% end %>

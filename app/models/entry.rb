@@ -11,8 +11,11 @@ class Entry < ApplicationRecord
 
   def assignment_name
     id = self.assignment
-    a = Assignment.find(id)
-    a.name
+    if Assignment.where(id: id).empty?
+      "ERROR: Deleted assignment. Delete this grade entry."
+    else
+      Assignment.where(id: id).first.name
+    end
   end
 
   def assignment_obj

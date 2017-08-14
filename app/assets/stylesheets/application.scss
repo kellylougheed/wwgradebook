@@ -17,8 +17,11 @@
  @import url(//fonts.googleapis.com/css?family=Oswald:300);
 
 h1 {
-  margin-top: 20px;
   text-align: center;
+}
+
+h1, h2 {
+  margin-top: 20px;
 }
 
 div.main {
@@ -46,6 +49,25 @@ button.navbar-toggler {
     #007bff 0px,
     #007bff 15px
   );
+}
+
+div.intro {
+  text-align: center;
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-style: italic;
+  }
+}
+
+img.img-responsive {
+  max-width: 100%;
+  border: 1px solid #cccccc;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 }
 
 @media (max-width: 767px) {

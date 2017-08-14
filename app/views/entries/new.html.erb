@@ -1,4 +1,9 @@
-<p>Back to student</p>
+<br/>
+<p>
+  <%= link_to student_path(@student) do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to <%= @student.first_name %> <%= @student.last_name %>
+  <% end %>
+</p>
 
 <h1>Add a Grade Entry</h1>
 
@@ -6,23 +11,19 @@
 
   <p>Assignment:
   <%= f.collection_select :assignment, Assignment.order('updated_at DESC'),:id,:name, include_blank: true %></p>
-
   <p>Please select a grade for ONLY the standards that this assignment evaluates.</p>
-
-  <p>1. <%= @course.standard1 %> <%= f.input :standard1_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>2. <%= @course.standard2 %> <%= f.input :standard2_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>3. <%= @course.standard3 %> <%= f.input :standard3_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>4. <%= @course.standard4 %> <%= f.input :standard4_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>5. <%= @course.standard5 %> <%= f.input :standard5_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>6. <%= @course.standard6 %> <%= f.input :standard6_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>7. <%= @course.standard7 %> <%= f.input :standard7_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>8. <%= @course.standard8 %> <%= f.input :standard8_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>9. <%= @course.standard9 %> <%= f.input :standard9_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>10. <%= @course.standard10 %> <%= f.input :standard10_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>11. <%= @course.standard11 %> <%= f.input :standard11_grade, as: :select, collection: Entry::GRADES %></p>
-  <p>12. <%= @course.standard12 %> <%= f.input :standard12_grade, as: :select, collection: Entry::GRADES %></p>
-  <br/>
+  <%= f.input :standard1_grade, label: "1. #{@course.standard1}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard2_grade, label: "2. #{@course.standard2}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard3_grade, label: "3. #{@course.standard3}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard4_grade, label: "4. #{@course.standard4}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard5_grade, label: "5. #{@course.standard5}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard6_grade, label: "6. #{@course.standard6}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard7_grade, label: "7. #{@course.standard7}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard8_grade, label: "8. #{@course.standard8}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard9_grade, label: "9. #{@course.standard9}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard10_grade, label: "10. #{@course.standard10}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard11_grade, label: "11. #{@course.standard11}", as: :select, collection: Entry::GRADES %>
+  <%= f.input :standard12_grade, label: "12. #{@course.standard12}", as: :select, collection: Entry::GRADES %>
   <%= f.input :comment %>
-  <br/>
-  <%= f.submit 'Add Grade', class: 'btn btn-primary' %>
-<% end %>
+  <%= f.submit 'Add Grade Entry', class: 'btn btn-primary' %>
+  <% end %>

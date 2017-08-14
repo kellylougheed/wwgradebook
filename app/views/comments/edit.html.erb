@@ -1,3 +1,10 @@
+<br/>
+<p>
+  <%= link_to student_path(@student) do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to <%= @student.first_name %> <%= @student.last_name %>
+  <% end %>
+</p>
+
 <h1>Edit Comment</h1>
 
 <%= simple_form_for @comment, url: student_comment_path(@student, @comment) do |f| %>

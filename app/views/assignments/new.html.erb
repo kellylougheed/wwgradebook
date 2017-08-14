@@ -1,21 +1,26 @@
+<br/>
+<p>
+  <%= link_to course_path(@course) do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to <%= @course.name %>
+  <% end %>
+</p>
+
 <h1>Create a New Assignment</h1>
 
 <%= simple_form_for @assignment, url: course_assignments_path(course_id: @course.id) do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, label: "Assignment Name" %>
   <p>Please check the standards that this assignment evaluates.</p>
-
-  <p>1. <%= @course.standard1 %> <%= f.input :has_standard1 %></p>
-  <p>2. <%= @course.standard2 %> <%= f.input :has_standard2 %></p>
-  <p>3. <%= @course.standard3 %> <%= f.input :has_standard3 %></p>
-  <p>4. <%= @course.standard4 %> <%= f.input :has_standard4 %></p>
-  <p>5. <%= @course.standard5 %> <%= f.input :has_standard5 %></p>
-  <p>6. <%= @course.standard6 %> <%= f.input :has_standard6 %></p>
-  <p>7. <%= @course.standard7 %> <%= f.input :has_standard7 %></p>
-  <p>8. <%= @course.standard8 %> <%= f.input :has_standard8 %></p>
-  <p>9. <%= @course.standard9 %> <%= f.input :has_standard9 %></p>
-  <p>10. <%= @course.standard10 %> <%= f.input :has_standard10 %></p>
-  <p>11. <%= @course.standard11 %> <%= f.input :has_standard11 %></p>
-  <p>12. <%= @course.standard12 %> <%= f.input :has_standard12 %></p>
-  <br/>
+  <%= f.input :has_standard1, label: "1. #{@course.standard1}" %>
+  <%= f.input :has_standard2, label: "2. #{@course.standard2}" %>
+  <%= f.input :has_standard3, label: "3. #{@course.standard3}" %>
+  <%= f.input :has_standard4, label: "4. #{@course.standard4}" %>
+  <%= f.input :has_standard5, label: "5. #{@course.standard5}" %>
+  <%= f.input :has_standard6, label: "6. #{@course.standard6}" %>
+  <%= f.input :has_standard7, label: "7. #{@course.standard7}" %>
+  <%= f.input :has_standard8, label: "8. #{@course.standard8}" %>
+  <%= f.input :has_standard9, label: "9. #{@course.standard9}" %>
+  <%= f.input :has_standard10, label: "10. #{@course.standard10}" %>
+  <%= f.input :has_standard11, label: "11. #{@course.standard11}" %>
+  <%= f.input :has_standard12, label: "12. #{@course.standard12}" %>
   <%= f.submit 'Create', class: 'btn btn-primary' %>
 <% end %>

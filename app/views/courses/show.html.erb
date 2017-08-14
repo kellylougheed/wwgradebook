@@ -1,3 +1,10 @@
+<br/>
+<p>
+  <%= link_to courses_path do %>
+    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to my courses
+  <% end %>
+</p>
+
 <h1><%= @course.name %></h1>
 
 <h2>Students</h2>
@@ -29,7 +36,7 @@
 <% if @course.assignments.empty? %>
   <p>No assignments to display.</p>
 <% else %>
-  <% @course.assignments.order('updated_at DESC').each do |assignment| %>
+  <% @course.assignments.order('created_at DESC').each do |assignment| %>
     <p>
       <%= link_to assignment_path(assignment), method: :delete, data: {confirm: 'Are you sure you want to delete this assignment?'} do %>
             <i class="fa fa-trash" aria-hidden="true"></i>

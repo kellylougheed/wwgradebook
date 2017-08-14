@@ -10,7 +10,7 @@
 <%= simple_form_for @entry, url: student_entries_path(student_id: @student.id) do |f| %>
 
   <p>Assignment:
-  <%= f.collection_select :assignment, Assignment.order('updated_at DESC'),:id,:name, include_blank: true %></p>
+  <%= f.collection_select :assignment, Assignment.where(course_id: @course.id).order('updated_at DESC'),:id,:name, include_blank: true %></p>
   <p>Please select a grade for ONLY the standards that this assignment evaluates.</p>
   <%= f.input :standard1_grade, label: "1. #{@course.standard1}", as: :select, collection: Entry::GRADES %>
   <%= f.input :standard2_grade, label: "2. #{@course.standard2}", as: :select, collection: Entry::GRADES %>

@@ -45,7 +45,7 @@ class StudentsController < ApplicationController
     @student = current_student
     @course = @student.course
     @student.destroy
-    redirect_to class_path(@course)
+    redirect_to course_path(@course)
   end
 
   private

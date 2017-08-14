@@ -6,7 +6,7 @@
 
 <% else %>
 
-<% @courses.order('created_at ASC').each do |course| %>
+<% @courses.order('created_at DESC').each do |course| %>
 
   <h2><%= link_to course_path(course) do %><%= course.name %><% end %></h2>
   <br/>

@@ -70,6 +70,34 @@ img.img-responsive {
   box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 }
 
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1px;
+  /* Set the fixed height of the footer here */
+  height: 20px;
+  background: #fff;
+  text-align: center;
+  font-size: .7em;
+  color: #333;
+}
+
+.footer a {
+  color: #333;
+  border: none;
+}
+
+.footer a:hover {
+  color: #333;
+  border: none;
+}
+
 @media (max-width: 767px) {
   a.navbar-brand {
     font-size: 2em;

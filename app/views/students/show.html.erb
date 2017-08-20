@@ -32,6 +32,16 @@
 12. <%= @course.standard12 %>: <b><%= @student.standard12_avg %></b><br/>
 </p>
 
+<h5>Final Grades</h5>
+
+<% if @entries.empty? %>
+<p>Once there is at least one grade entry, final grade calculations will be displayed.</p>
+<% else %>
+<p><b>Final WW Grade</b>: <%= @student.final_ww_grade %><br/>
+<b>Final Grade</b>: <%= @student.final_grade %><br/>
+<b>Final GPR</b>: <%= @student.final_GPR %></p>
+<% end %>
+
 <h2>Grades</h2>
 
 <% if @entries.empty? %>

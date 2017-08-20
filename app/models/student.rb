@@ -406,4 +406,176 @@ class Student < ApplicationRecord
     end
   end
 
+  def final_ww_grade
+    gpr = self.final_GPR
+    if gpr <= 4.0 && gpr >= 3.34
+      "M"
+    elsif gpr <= 3.33 && gpr >= 3.24
+      "AM"
+    elsif gpr <= 2.33 && gpr >= 1.34
+      "DC"
+    else
+      "NDC"
+    end
+  end
+
+  def final_grade
+    gpr = self.final_GPR
+    if gpr <= 4.0 && gpr >= 3.67
+      "A"
+    elsif gpr <= 3.66 && gpr >= 3.34
+      "A-"
+    elsif gpr <= 3.33 && gpr >= 3.01
+      "B+"
+    elsif gpr <= 3.0 && gpr >= 2.67
+      "B"
+    elsif gpr <= 2.66 && gpr >= 2.34
+      "B-"
+    elsif gpr <= 2.33 && gpr >= 2.01
+      "C+"
+    elsif gpr <= 2.0 && gpr >= 1.67
+      "C"
+    elsif gpr <= 1.66 && gpr >= 1.34
+      "C-"
+    elsif gpr <= 1.33 && gpr >= 1.0
+      "D"
+    else
+      "NC"
+    end
+  end
+
+  def final_GPR
+    totals = self.calculate_totals
+    gpr = 4.0 - (totals[1].to_f * 0.138) - (totals[2].to_f * 0.222) - (totals[3].to_f * 0.333)
+    gpr.round(2)
+  end
+
+  def calculate_totals
+    m_total = 0
+    am_total = 0
+    dc_total = 0
+    ndc_total = 0
+    case self.standard1_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard2_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard3_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard4_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard5_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard6_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard7_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard8_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard9_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard10_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard11_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    case self.standard12_avg
+    when "M"
+      m_total += 1
+    when "AM"
+      am_total += 1
+    when "DC"
+      dc_total +=1
+    when "NDC"
+      ndc_total += 1
+    end
+    [m_total, am_total, dc_total, ndc_total]
+  end
+  
 end
